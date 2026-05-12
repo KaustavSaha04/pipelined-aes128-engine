@@ -1,15 +1,50 @@
-# aes128-pipelined-accelerator
+# pipelined-aes128-engine
 
-This project focuses on the hardware implementation of a high-throughput AES-128 encryption accelerator using a pipelined architecture. The design explores efficient RTL-based implementation of AES encryption stages for improved throughput and performance on FPGA and ASIC design flows.
+High-performance pipelined AES-128 hardware accelerator implemented in Verilog HDL for FPGA-based cryptographic processing.
 
-The project includes:
+This project presents a fully pipelined AES-128 encryption engine designed using synthesizable RTL and validated on Xilinx Vivado. The architecture achieves continuous high-throughput encryption by processing multiple 128-bit blocks simultaneously across pipeline stages.
 
-- RTL implementation of AES-128 encryption
-- Pipelined datapath design for high-speed operation
-- Key expansion and round transformation modules
-- Simulation and functional verification
-- Timing and resource optimization
-- FPGA synthesis and implementation workflow
-- ASIC-oriented design exploration and physical implementation support
+The implementation follows the NIST FIPS-197 AES specification and demonstrates both hardware correctness and large-scale data verification using Python-based golden reference models.
 
-The accelerator is designed with emphasis on modularity, scalability, and hardware efficiency, making it suitable for secure embedded systems and high-performance cryptographic applications.
+---
+
+## Features
+
+- Fully synthesizable Verilog HDL implementation
+- 10-stage pipelined AES-128 datapath
+- High-throughput architecture
+- Parallel SubBytes processing
+- Optimized GF(2^8) arithmetic for MixColumns
+- Complete AES-128 key expansion module
+- Streaming RTL simulation support
+- Python-based verification and image encryption demo
+---
+
+## Performance
+
+| Metric | Value |
+|---|---|
+| AES Variant | AES-128 |
+| Block Size | 128 bits |
+| Pipeline Depth | 10 stages |
+| Fill Latency | 13 clock cycles |
+| Throughput | 128 bits/cycle |
+
+---
+
+# Repository Structure
+
+```text
+pipelined-aes128-engine/
+│
+├── demo/
+│   ├── *.ipynb
+│   ├── tux image files
+│   └── python verification + ECB demo
+│
+├── vivado_project/
+│   ├── AES_128.srcs/
+│   ├── AES_128.xpr
+│   └── simulation outputs
+│
+└── README.md
