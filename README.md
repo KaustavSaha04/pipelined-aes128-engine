@@ -27,7 +27,7 @@ The implementation follows the NIST FIPS-197 AES specification and demonstrates 
 | AES Variant | AES-128 |
 | Block Size | 128 bits |
 | Pipeline Depth | 10 stages |
-| Fill Latency | 13 clock cycles |
+| Fill Latency | 12 clock cycles |
 | Throughput | 128 bits/cycle |
 
 ---
